@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductBookingWebAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActivityProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventName" Type="varchar" MaxLength="30" />
+    <Property Name="FromTime" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ToTime" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Place" Type="varchar" MaxLength="50" />
+    <Property Name="isBooked" Type="bit" />
+    <Property Name="isSaved" Type="bit" />
+  </EntityType>
+  <EntityType Name="AirProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FlightCompany" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="DepartureDate" Type="datetime" Nullable="false" />
+    <Property Name="ArrivalDate" Type="datetime" Nullable="false" />
+    <Property Name="FromPlace" Type="varchar" MaxLength="50" />
+    <Property Name="ToPlace" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="isBooked" Type="bit" />
+    <Property Name="isSaved" Type="bit" />
+  </EntityType>
+  <EntityType Name="CarProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company" Type="varchar" MaxLength="30" />
+    <Property Name="Model" Type="varchar" MaxLength="30" />
+    <Property Name="CarNumber" Type="varchar" MaxLength="30" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="isBooked" Type="bit" />
+    <Property Name="isSaved" Type="bit" />
+  </EntityType>
+  <EntityType Name="HotelProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FromDate" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ToDate" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LandMark" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="isBooked" Type="bit" />
+    <Property Name="isSaved" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="ProductBookingWebAPIModelStoreContainer">
+    <EntitySet Name="ActivityProduct" EntityType="Self.ActivityProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AirProduct" EntityType="Self.AirProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CarProduct" EntityType="Self.CarProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotelProduct" EntityType="Self.HotelProduct" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

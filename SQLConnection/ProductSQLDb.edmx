@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProductBookingWebAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActivityProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="30" />
+          <Property Name="FromTime" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ToTime" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Place" Type="varchar" MaxLength="50" />
+          <Property Name="isBooked" Type="bit" />
+          <Property Name="isSaved" Type="bit" />
+        </EntityType>
+        <EntityType Name="AirProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FlightCompany" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="DepartureDate" Type="datetime" Nullable="false" />
+          <Property Name="ArrivalDate" Type="datetime" Nullable="false" />
+          <Property Name="FromPlace" Type="varchar" MaxLength="50" />
+          <Property Name="ToPlace" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="isBooked" Type="bit" />
+          <Property Name="isSaved" Type="bit" />
+        </EntityType>
+        <EntityType Name="CarProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="30" />
+          <Property Name="Model" Type="varchar" MaxLength="30" />
+          <Property Name="CarNumber" Type="varchar" MaxLength="30" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="isBooked" Type="bit" />
+          <Property Name="isSaved" Type="bit" />
+        </EntityType>
+        <EntityType Name="HotelProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FromDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ToDate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LandMark" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="isBooked" Type="bit" />
+          <Property Name="isSaved" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="ProductBookingWebAPIModelStoreContainer">
+          <EntitySet Name="ActivityProduct" EntityType="Self.ActivityProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AirProduct" EntityType="Self.AirProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarProduct" EntityType="Self.CarProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotelProduct" EntityType="Self.HotelProduct" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProductBookingWebAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ActivityProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FromTime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ToTime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isBooked" Type="Boolean" />
+          <Property Name="isSaved" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="AirProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FlightCompany" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DepartureDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ArrivalDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FromPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ToPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="isBooked" Type="Boolean" />
+          <Property Name="isSaved" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CarProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CarNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="isBooked" Type="Boolean" />
+          <Property Name="isSaved" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="HotelProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FromDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ToDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LandMark" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="isBooked" Type="Boolean" />
+          <Property Name="isSaved" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="ProductBookingWebAPIEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActivityProducts" EntityType="Self.ActivityProduct" />
+          <EntitySet Name="AirProducts" EntityType="Self.AirProduct" />
+          <EntitySet Name="CarProducts" EntityType="Self.CarProduct" />
+          <EntitySet Name="HotelProducts" EntityType="Self.HotelProduct" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProductBookingWebAPIModelStoreContainer" CdmEntityContainer="ProductBookingWebAPIEntities1">
+          <EntitySetMapping Name="ActivityProducts">
+            <EntityTypeMapping TypeName="ProductBookingWebAPIModel.ActivityProduct">
+              <MappingFragment StoreEntitySet="ActivityProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+                <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="isBooked" ColumnName="isBooked" />
+                <ScalarProperty Name="isSaved" ColumnName="isSaved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AirProducts">
+            <EntityTypeMapping TypeName="ProductBookingWebAPIModel.AirProduct">
+              <MappingFragment StoreEntitySet="AirProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FlightCompany" ColumnName="FlightCompany" />
+                <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="FromPlace" ColumnName="FromPlace" />
+                <ScalarProperty Name="ToPlace" ColumnName="ToPlace" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="isBooked" ColumnName="isBooked" />
+                <ScalarProperty Name="isSaved" ColumnName="isSaved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarProducts">
+            <EntityTypeMapping TypeName="ProductBookingWebAPIModel.CarProduct">
+              <MappingFragment StoreEntitySet="CarProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="CarNumber" ColumnName="CarNumber" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="isBooked" ColumnName="isBooked" />
+                <ScalarProperty Name="isSaved" ColumnName="isSaved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotelProducts">
+            <EntityTypeMapping TypeName="ProductBookingWebAPIModel.HotelProduct">
+              <MappingFragment StoreEntitySet="HotelProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="isBooked" ColumnName="isBooked" />
+                <ScalarProperty Name="isSaved" ColumnName="isSaved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

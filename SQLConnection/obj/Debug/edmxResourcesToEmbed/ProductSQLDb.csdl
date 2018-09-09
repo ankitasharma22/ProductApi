@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductBookingWebAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ActivityProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FromTime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ToTime" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isBooked" Type="Boolean" />
+    <Property Name="isSaved" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AirProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FlightCompany" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DepartureDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ArrivalDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FromPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="isBooked" Type="Boolean" />
+    <Property Name="isSaved" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CarProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Model" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CarNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="isBooked" Type="Boolean" />
+    <Property Name="isSaved" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HotelProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FromDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ToDate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LandMark" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="isBooked" Type="Boolean" />
+    <Property Name="isSaved" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="ProductBookingWebAPIEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActivityProducts" EntityType="Self.ActivityProduct" />
+    <EntitySet Name="AirProducts" EntityType="Self.AirProduct" />
+    <EntitySet Name="CarProducts" EntityType="Self.CarProduct" />
+    <EntitySet Name="HotelProducts" EntityType="Self.HotelProduct" />
+  </EntityContainer>
+</Schema>

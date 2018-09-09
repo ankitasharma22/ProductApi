@@ -1,0 +1,11 @@
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\bin\Debug\SQLConnection.dll.config
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\bin\Debug\SQLConnection.dll
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\bin\Debug\SQLConnection.pdb
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\bin\Debug\EntityFramework.dll
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\bin\Debug\EntityFramework.xml
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\obj\Debug\SQLConnection.csproj.CoreCompileInputs.cache
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\obj\Debug\SQLConnection.dll
+c:\users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\obj\Debug\SQLConnection.pdb
+C:\Users\asharma\source\repos\ProductBookinUsingEntity\SQLConnection\obj\Debug\SQLConnection.csprojResolveAssemblyReference.cache
